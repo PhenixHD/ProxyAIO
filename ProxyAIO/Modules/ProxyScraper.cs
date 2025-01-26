@@ -10,7 +10,7 @@ namespace ProxyAIO.Modules {
             };
 
             //Regex for Proxies + Make Empty list to prevent re-using full list due to multi-threading
-            string proxyRegex = @"\b\d{1,3}(?:\.\d{1,3}){3}:\d+\b";
+            Regex proxyRegex = new Regex(@"\b\d{1,3}(?:\.\d{1,3}){3}:\d+\b", RegexOptions.Compiled);
             string rawData = string.Empty;
             List<string> validProxies = new List<string>();
 
@@ -20,9 +20,9 @@ namespace ProxyAIO.Modules {
                 string[] lines = rawData.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
                 foreach (string line in lines) {
-                    Match match = Regex.Match(line, proxyRegex);
+                    MatchCollection matches = proxyRegex.Matches(line);
 
-                    if (match.Success) {
+                    foreach (Match match in matches) {
                         validProxies.Add(match.Value);
                     }
                 }
@@ -43,7 +43,6 @@ namespace ProxyAIO.Modules {
                     Console.Write($"{url}\n");
                     Console.ResetColor();
                 }
-
             } catch (HttpRequestException) {
                 string proxyValue = $"[Proxies: 0]";
 
@@ -55,7 +54,6 @@ namespace ProxyAIO.Modules {
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write($"{url}\n");
                 }
-
             } catch (TaskCanceledException) {
                 string proxyValue = $"[Proxies: 0]";
 
@@ -68,7 +66,6 @@ namespace ProxyAIO.Modules {
                     Console.WriteLine($"{url}");
                     Console.ResetColor();
                 }
-
             } catch {
                 lock (ConsoleLock) {
                     string proxyValue = $"[Proxies: 0]";
@@ -81,10 +78,8 @@ namespace ProxyAIO.Modules {
                     Console.WriteLine($"{url}");
                     Console.ResetColor();
                 }
-
             }
             return validProxies;
         }
-
     }
 }
