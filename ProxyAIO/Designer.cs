@@ -109,5 +109,10 @@
 [9] Information
 [0] Exit";
         }
+
+        public static string GetSettingsMenuSelection() {
+        return @"
+[1] Timeout";
+        }
     }
 }

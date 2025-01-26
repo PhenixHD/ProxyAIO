@@ -1,11 +1,43 @@
 ﻿namespace ProxyAIO {
     internal class Selector {
+        public static async Task<string> MainMenu() {
+            Console.Clear();
+
+            await Designer.AnimateText(Designer.GetMainMenuArt());
+            await Designer.AnimateText(Designer.GetMainMenuSelection(), false, false);
+
+            ConsoleKeyInfo keyInfo = Console.ReadKey();
+            char userSelection = keyInfo.KeyChar;
+
+            switch (userSelection) {
+                case '0':  //Exit
+                    return "Exit";
+
+                case '1':  //Proxy Scraper
+                    return "ProxyScraper";
+
+                case '2':  //Proxy Checker
+                    return "ProxyChecker";
+
+                case '3':  //Host Rotating
+                    return "HostRotating";
+
+                case '4':  //Settings
+                    return "Settings";
+
+                case '9':  //Information
+                    return "Information";
+
+                default:  //re-do
+                    return "MainMenu";
+            }
+        }
+
         public static async Task Selection() {
             bool isRunning = true;
             string currentMenu = "MainMenu";
 
             while (isRunning) {
-
                 switch (currentMenu) {
                     case "MainMenu":
                         currentMenu = await MainMenu();
@@ -39,6 +71,7 @@
                         break;
 
                     case "Settings":
+                        Console.Clear();
                         break;
 
                     case "Information":
@@ -51,44 +84,8 @@
                     default:
                         currentMenu = "MainMenu";
                         break;
-
                 }
             }
         }
-
-        public static async Task<string> MainMenu() {
-            Console.Clear();
-
-            await Designer.AnimateText(Designer.GetMainMenuArt());
-            await Designer.AnimateText(Designer.GetMainMenuSelection(), false, false);
-
-            ConsoleKeyInfo keyInfo = Console.ReadKey();
-            char userSelection = keyInfo.KeyChar;
-
-            switch (userSelection) {
-                case '0':  //Exit
-                    return "Exit";
-
-                case '1':  //Proxy Scraper
-                    return "ProxyScraper";
-
-                case '2':  //Proxy Checker
-                    return "ProxyChecker";
-
-                case '3':  //Host Rotating
-                    return "HostRotating";
-
-                case '4':  //Settings
-                    return "Settings";
-
-                case '9':  //Information
-                    return "Information";
-
-                default:  //re-do
-                    return "MainMenu";
-
-            }
-        }
-
     }
 }
