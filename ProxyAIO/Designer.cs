@@ -111,7 +111,7 @@
         }
 
         public static string GetSettingsMenuSelection() {
-        return @"
+            return @"
 [1] Timeout";
         }
 

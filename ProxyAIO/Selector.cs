@@ -1,4 +1,6 @@
-﻿namespace ProxyAIO {
+﻿using ProxyAIO.Configuration;
+
+namespace ProxyAIO {
     internal class Selector {
         public static async Task<string> MainMenu() {
             Console.Clear();
@@ -71,10 +73,8 @@
                         break;
 
                     case "Settings":
-                        Console.Clear();
 
-                        await Designer.AnimateText(Designer.GetSettingArt());
-                        await Designer.AnimateText(Designer.GetSettingsMenuSelection(), false, false);
+                        await Modules.Settings.UpdateSettings();
 
                         Console.ReadKey();
                         currentMenu = "MainMenu";
