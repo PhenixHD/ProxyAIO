@@ -72,6 +72,14 @@
 
                     case "Settings":
                         Console.Clear();
+
+                        await Designer.AnimateText(Designer.GetSettingArt());
+                        await Designer.AnimateText(Designer.GetSettingsMenuSelection(), false, false);
+
+
+
+                        Console.ReadKey();
+                        currentMenu = "MainMenu";
                         break;
 
                     case "Information":
