@@ -83,6 +83,13 @@
                         break;
 
                     case "Information":
+                        Console.Clear();
+
+                        await Designer.AnimateText(Designer.GetInformationArt());
+                        await Designer.AnimateText(Designer.GetInformationMenuSelection(), false, false);
+
+                        Console.ReadKey();
+                        currentMenu = "MainMenu";
                         break;
 
                     case "Exit":

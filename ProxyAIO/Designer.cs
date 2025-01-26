@@ -114,5 +114,15 @@
         return @"
 [1] Timeout";
         }
+
+        public static string GetInformationMenuSelection() {
+            return @"
+[Application]
+Developer Build - Unfinished
+
+[Developer]
+Github: https://github.com/PhenixHD";
+        }
+
     }
 }
