@@ -12,6 +12,7 @@
             ScraperDirectory = Path.Combine(MainDirectory, "Proxy Scraper");
             CheckerDirectory = Path.Combine(MainDirectory, "Proxy Checker");
         }
+
         public static void createAll() {
 
             try {
@@ -19,8 +20,8 @@
                 Directory.CreateDirectory(CheckerDirectory);
 
                 if (!File.Exists(UrlFilePath)) {
-                    using (var fs = File.Create(UrlFilePath)) {
-                        using (var sw = new StreamWriter(fs)) {
+                    using (FileStream fs = File.Create(UrlFilePath)) {
+                        using (StreamWriter sw = new StreamWriter(fs)) {
                             sw.WriteLine("# List of URLs to Scrape\n" +
                                 "# Accepted Format [http|https]://[domain]");
                         }
