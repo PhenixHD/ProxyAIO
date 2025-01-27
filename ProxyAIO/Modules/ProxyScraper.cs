@@ -6,7 +6,7 @@ namespace ProxyAIO.Modules {
 
         public static async Task<List<string>> ParseProxies(string url) {
             using HttpClient client = new HttpClient {
-                Timeout = TimeSpan.FromSeconds(10)
+                Timeout = TimeSpan.FromSeconds(Settings.timeout)
             };
 
             //Regex for Proxies + Make Empty list to prevent re-using full list due to multi-threading

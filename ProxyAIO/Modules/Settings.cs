@@ -13,15 +13,28 @@
             await Designer.AnimateText(Designer.GetSettingArt());
             await Designer.AnimateText(Designer.GetSettingsMenuSelection(), false, false);
 
-            Console.WriteLine($"Current Timeout for Parsing: {timeout}");
-            Console.Write("Enter new Timeout in Seconds: ");
+            ConsoleKeyInfo keyInfo = Console.ReadKey();
+            char userSelection = keyInfo.KeyChar;
 
-            Configuration.Settings.Default.Timeout = Convert.ToInt32(Console.ReadLine());
-            Configuration.Settings.Default.Save();
-            timeout = Configuration.Settings.Default.Timeout;
+            Console.Clear();
+            await Designer.AnimateText(Designer.GetSettingArt());
 
-            Console.WriteLine($"New Timeout set!");
+            switch (userSelection) {
+                case '1':
+                    await Designer.AnimateText($"Current Timeout: {timeout}s", false, false);
+                    Console.Write("New Timeout: ");
 
+                    Validator.ReadInteger(1, 20);
+                    Configuration.Settings.Default.Save();
+                    timeout = Configuration.Settings.Default.Timeout;
+
+                    Console.WriteLine($"\nNew Timeout set!");
+                    Thread.Sleep(TimeSpan.FromSeconds(2));
+                    break;
+
+                default:
+                    break;
+            }
         }
 
     }

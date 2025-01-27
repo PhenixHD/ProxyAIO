@@ -76,7 +76,6 @@ namespace ProxyAIO {
 
                         await Modules.Settings.UpdateSettings();
 
-                        Console.ReadKey();
                         currentMenu = "MainMenu";
                         break;
 

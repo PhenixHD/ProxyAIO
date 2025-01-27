@@ -22,5 +22,27 @@
             return false;
         }
 
+        public static int ReadInteger(int minValid, int maxValid) {
+            var cursorPos = Console.GetCursorPosition();
+            int value;
+
+            while (true) {
+
+                Console.SetCursorPosition(cursorPos.Left, cursorPos.Top);
+                Console.ForegroundColor = ConsoleColor.White;
+                string userInput = Console.ReadLine();
+
+                if (int.TryParse(userInput, out value) && value >= minValid && value <= maxValid) {
+                    return value;
+                } else {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.Write("\nInvalid Input. Try again!");
+                    Console.SetCursorPosition(cursorPos.Left, cursorPos.Top);
+                    Console.ResetColor();
+                }
+
+            }
+        }
+
     }
 }
