@@ -56,6 +56,10 @@ namespace ProxyAIO {
                         List<string>[] allProxies = await Task.WhenAll(tasks);
                         List<string> proxies = allProxies.SelectMany(proxies => proxies).ToList();
 
+                        if (Modules.Settings.removeDupe) {
+                            proxies = proxies.Distinct().ToList();
+                        }
+
                         File.WriteAllLines(Storage.ProxyFilePath, proxies);
 
                         Console.WriteLine($"\n[Total Proxies: {proxies.Count}]");
