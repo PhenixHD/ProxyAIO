@@ -44,5 +44,27 @@
             }
         }
 
+        public static bool ReadBool() {
+            var cursorPos = Console.GetCursorPosition();
+            bool value;
+
+            while (true) {
+
+                Console.SetCursorPosition(cursorPos.Left, cursorPos.Top);
+                Console.ForegroundColor = ConsoleColor.White;
+                string userInput = Console.ReadLine();
+
+                if (bool.TryParse(userInput, out value)) {
+                    return value;
+                } else {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.Write("\nInvalid Input. Try again!");
+                    Console.SetCursorPosition(cursorPos.Left, cursorPos.Top);
+                    Console.ResetColor();
+                }
+
+            }
+        }
+
     }
 }

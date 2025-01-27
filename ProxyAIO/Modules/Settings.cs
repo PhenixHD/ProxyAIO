@@ -2,9 +2,11 @@
     internal class Settings {
 
         public static int timeout { get; set; }
+        public static bool removeDupe { get; set; }
 
         static Settings() {
             timeout = Configuration.Settings.Default.Timeout;
+            removeDupe = Configuration.Settings.Default.RemoveDupe;
         }
 
         public static async Task UpdateSettings() {
@@ -21,14 +23,26 @@
 
             switch (userSelection) {
                 case '1':
-                    await Designer.AnimateText($"Current Timeout: {timeout}s", false, false);
+                    await Designer.AnimateText($"Current Timeout: {timeout}s [Valid: 1-300]", false, false);
                     Console.Write("New Timeout: ");
 
-                    Validator.ReadInteger(1, 20);
+                    Configuration.Settings.Default.Timeout = Validator.ReadInteger(1, 300);
                     Configuration.Settings.Default.Save();
                     timeout = Configuration.Settings.Default.Timeout;
 
-                    Console.WriteLine($"\nNew Timeout set!");
+                    Console.WriteLine($"\nUpdated Value");
+                    Thread.Sleep(TimeSpan.FromSeconds(2));
+                    break;
+
+                case '2':
+                    await Designer.AnimateText($"Current: {removeDupe} [Valid: True | False]", false, false);
+                    Console.Write("New Settings: ");
+
+                    Configuration.Settings.Default.RemoveDupe = Validator.ReadBool();
+                    Configuration.Settings.Default.Save();
+                    removeDupe = Configuration.Settings.Default.RemoveDupe;
+
+                    Console.WriteLine($"\nUpdated Value");
                     Thread.Sleep(TimeSpan.FromSeconds(2));
                     break;
 

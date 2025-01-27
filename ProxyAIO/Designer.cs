@@ -112,7 +112,8 @@
 
         public static string GetSettingsMenuSelection() {
             return @"
-[1] Timeout";
+[1] Timeout
+[2] Remove Duplicates";
         }
 
         public static string GetInformationMenuSelection() {
