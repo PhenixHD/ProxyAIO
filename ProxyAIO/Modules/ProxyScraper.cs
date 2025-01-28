@@ -4,6 +4,9 @@ namespace ProxyAIO.Modules {
     internal class ProxyScraper {
         private static readonly object ConsoleLock = new object();
 
+        //Proxy Scraping class
+        //To-Do Limit active Threads + remove redundant code
+        //Add code from Selector.cs into Proxyscraper for cleaner Menu Selection handling
         public static async Task<List<string>> ParseProxies(string url) {
             using HttpClient client = new HttpClient {
                 Timeout = TimeSpan.FromSeconds(Settings.timeout)

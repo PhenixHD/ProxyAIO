@@ -14,6 +14,7 @@
             CheckerDirectory = Path.Combine(MainDirectory, "Proxy Checker");
         }
 
+        //Creates Directory for Tool and re-creates if missing
         public static void createAll() {
 
             try {

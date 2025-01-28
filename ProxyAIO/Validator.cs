@@ -22,6 +22,7 @@
             return false;
         }
 
+        //Reads userinput and checks if within valid range + reset cursor to last pos before writing
         public static int ReadInteger(int minValid, int maxValid) {
             var cursorPos = Console.GetCursorPosition();
             int value;
@@ -44,6 +45,7 @@
             }
         }
 
+        //Reads userinput and checks if bool + reset cursor to last pos before writing
         public static bool ReadBool() {
             var cursorPos = Console.GetCursorPosition();
             bool value;

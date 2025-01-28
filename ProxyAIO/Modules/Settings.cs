@@ -4,6 +4,8 @@
         public static int timeout { get; set; }
         public static bool removeDupe { get; set; }
 
+        //This is prob. one of the worst code I've willingly written and not changed in this project.
+        //To-Do Display settings in Main Menu, Update whole Line on invalid input to prevent overwriting characters
         static Settings() {
             timeout = Configuration.Settings.Default.Timeout;
             removeDupe = Configuration.Settings.Default.RemoveDupe;

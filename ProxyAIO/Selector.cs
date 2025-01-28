@@ -35,6 +35,8 @@ namespace ProxyAIO {
             }
         }
 
+        //Terrible handling for Menu.
+        //Recode added on To-Do List
         public static async Task Selection() {
             bool isRunning = true;
             string currentMenu = "MainMenu";

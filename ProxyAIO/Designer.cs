@@ -100,6 +100,7 @@
 ╚─────────────────────────────────────────────────╝";
         }
 
+        //Multi-Line Main Menu Art
         public static string GetMainMenuSelection() {
             return @"
 [1] Scrape Proxies

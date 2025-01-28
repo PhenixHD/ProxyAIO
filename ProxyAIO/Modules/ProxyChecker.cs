@@ -6,6 +6,8 @@ namespace ProxyAIO.Modules {
         private static readonly object ConsoleLock = new object();
         private static readonly SemaphoreSlim semaphore = new SemaphoreSlim(25);
 
+        //Fuck me this is shit and was only to test how socks connection work
+        //Recode is added to To-Do List together with dynamic checking for HTTP/s, Socks4/a & Socks5 checking at same time
         public static async Task<List<string>> CheckProxies(string filePath) {
 
             string[] proxies = File.ReadAllLines(RemoveQuotes(filePath));
@@ -61,6 +63,7 @@ namespace ProxyAIO.Modules {
             return workingProxies;
         }
 
+        //Removes unwanted '"' From File Strings incase User Drag & Drops file and string gets '"' added at front and back
         private static string RemoveQuotes(string input) {
             if (!string.IsNullOrEmpty(input) && input.StartsWith("\"") && input.EndsWith("\"")) {
                 return input.Substring(1, input.Length - 2);
