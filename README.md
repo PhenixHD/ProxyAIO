@@ -3,6 +3,9 @@
 `This is a learning project. Bad code and inefficient reource usage is expected.
 This project is WIP and will often be updated with unfinished/broken code for the sake of saving progress.`
 
+<img src="https://github.com/user-attachments/assets/7a87369a-9594-4db3-9c1f-2f28091edfcb" alt="Main Menu" width="500" height="300">
+<img src="https://github.com/user-attachments/assets/cc1d2b0f-fb4c-4c40-958e-7e6beb9e310a" alt="Proxy Scraper" width="500" height="300">
+
 ## Features
 
 ### ✅ **Proxy Scraping**
