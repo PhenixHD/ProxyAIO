@@ -4,6 +4,7 @@
         public static string MainDirectory { get; private set; }
         public static string ScraperDirectory { get; private set; }
         public static string CheckerDirectory { get; private set; }
+        public static string CheckedFilePath => Path.Combine(CheckerDirectory, "Checked.txt");
         public static string ProxyFilePath => Path.Combine(ScraperDirectory, "Proxy.txt");
         public static string UrlFilePath => Path.Combine(ScraperDirectory, "URLs.txt");
 

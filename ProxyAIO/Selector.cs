@@ -75,7 +75,9 @@ namespace ProxyAIO {
                         await Designer.AnimateCenteredCharacter("Drag & Drop Proxy file here");
 
                         string filePath = Console.ReadLine();
-                        await Modules.ProxyChecker.CheckProxies(filePath);
+                        List<string> checkedProx = await Modules.ProxyChecker.CheckProxies(filePath);
+
+                        File.WriteAllLines(Storage.CheckedFilePath, checkedProx);
                         break;
 
                     case "HostRotating":
