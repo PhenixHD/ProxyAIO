@@ -1,7 +1,11 @@
-﻿namespace ProxyAIO.Modules {
+﻿using ProxyAIO.Core;
+using ProxyAIO.UI;
+
+namespace ProxyAIO.Modules {
     internal class Settings {
 
         public static int timeout { get; set; }
+        public static int Threads { get; set; }
         public static bool removeDupe { get; set; }
 
         //This is prob. one of the worst code I've willingly written and not changed in this project.
@@ -9,6 +13,7 @@
         static Settings() {
             timeout = Configuration.Settings.Default.Timeout;
             removeDupe = Configuration.Settings.Default.RemoveDupe;
+            Threads = Configuration.Settings.Default.Threads;
         }
 
         public static async Task UpdateSettings() {

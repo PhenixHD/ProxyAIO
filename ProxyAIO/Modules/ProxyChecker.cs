@@ -4,7 +4,7 @@ using System.Net.Security;
 namespace ProxyAIO.Modules {
     internal class ProxyChecker {
         private static readonly object ConsoleLock = new object();
-        private static readonly SemaphoreSlim semaphore = new SemaphoreSlim(25);
+        private static readonly SemaphoreSlim semaphore = new SemaphoreSlim(Modules.Settings.Threads);
 
         //Fuck me this is shit and was only to test how socks connection work
         //Recode is added to To-Do List together with dynamic checking for HTTP/s, Socks4/a & Socks5 checking at same time

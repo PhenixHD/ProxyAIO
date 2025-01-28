@@ -1,4 +1,4 @@
-﻿namespace ProxyAIO {
+﻿namespace ProxyAIO.Utilities {
     internal class Storage {
         //creates all folders and URL file
         public static string MainDirectory { get; private set; }

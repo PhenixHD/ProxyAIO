@@ -1,7 +1,10 @@
 ﻿using ProxyAIO.Configuration;
+using ProxyAIO.UI;
+using ProxyAIO.Utilities;
 
-namespace ProxyAIO {
+namespace ProxyAIO.Core {
     internal class Selector {
+        //Main Menu Interface
         public static async Task<string> MainMenu() {
             Console.Clear();
 
@@ -35,8 +38,7 @@ namespace ProxyAIO {
             }
         }
 
-        //Terrible handling for Menu.
-        //Recode added on To-Do List
+        //Selection Logic for all Menues
         public static async Task Selection() {
             bool isRunning = true;
             string currentMenu = "MainMenu";

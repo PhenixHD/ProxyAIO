@@ -1,0 +1,34 @@
+Proxy Scraper 
+- Add multi-threading to improve resource usage.  
+- Enable scraping across multiple layers of URLs.  
+- Automatically remove invalid links (e.g., `http://zi1.zeroredirect1.com/...`).  
+- Add a UI to show scraping progress:  
+  - Example: `Progress [||||||-47%----] | Valid URLs: 71 | Invalid: 29 | Ratio: 71.0% | 29.0%`.  
+- Add the ability to limit the total scrape amount per session.  
+- Automatically validate scraped proxies.  
+- Update file-saving methods to improve efficiency or structure.  
+- Revise the stats interface for better readability and usability.  
+
+ Proxy Checker
+- Add support for automatically checking proxies of these types:  
+  - HTTP/s  
+  - Socks4  
+  - Socks5  
+- Add a UI to display proxy checking progress:  
+  - Example: `Progress [|||||--34%----] | Valid: 3928 | Invalid: 8391 | Ratio: 31.9% | 68.1%`.  
+- Save results into separate `.txt` files for better organization:  
+  - `HTTP.txt`  
+  - `Socks.txt`    
+  - `Mix.txt`    
+
+Host Rotating  
+- Host the rotating proxy list on a local server, e.g., `localhost:8000`.  
+- Enable seamless proxy updates without downtime, so a new `IP:PORT` is available with every request.  
+- Add background functionality to scrape and check proxies automatically for rotation.  
+- Create a UI for displaying proxy usage stats:  
+  - Example: `Type: Socks4 | Amount: 3921 | Usage/sec: 91 proxies/s | Time since last update: 01:31min`.  
+
+
+Settings 
+- Display current settings before editing, e.g., `Timeout | Current: 7s`.  
+- Add an option to reset settings to default values.  

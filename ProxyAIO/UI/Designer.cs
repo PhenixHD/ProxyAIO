@@ -1,4 +1,4 @@
-﻿namespace ProxyAIO {
+﻿namespace ProxyAIO.UI {
     internal class Designer {
 
         //Animates Rows or Character based on arguments passed

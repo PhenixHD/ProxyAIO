@@ -1,4 +1,4 @@
-﻿namespace ProxyAIO {
+﻿namespace ProxyAIO.Core {
     internal class Validator {
 
         //Checks if url is valid format
