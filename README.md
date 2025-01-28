@@ -1,5 +1,3 @@
-WIP Proxy Tool.
-
 Functions
 -Proxy Scraping
 -Proxy Checking HTTPs/Socks4/Socks5
@@ -18,8 +16,7 @@ Drag & Drop File to Check
 Display Good/Bad Proxy
 Check only Sock5 currently for testing purpose (will update asap)
 
-Host Rotating [Not Implemented]
--
+Host Rotating [Not Implemented (Unfinished)]
 
 Settings [WIP (Unfinished)]
 Timeout for Scraper
