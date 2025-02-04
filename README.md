@@ -1,5 +1,8 @@
 # Proxy AIO Tool
 
+## This Tool is currently broken and will be re-coded from ground due to newly obtained programming knowledge.
+
+
 `This is a learning project. Bad code and inefficient reource usage is expected.
 This project is WIP and will often be updated with unfinished/broken code for the sake of saving progress.`
 
