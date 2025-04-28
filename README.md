@@ -1,8 +1,6 @@
-# Proxy AIO Tool
+## Tool has been fully re-coded find the new tool [here](https://github.com/PhenixHD/WaveProxyAIO/)
 
-## This Tool is currently broken and will be re-coded from ground due to newly obtained programming knowledge.
-
-
+# [DEPRECATED] Proxy AIO Tool
 `This is a learning project. Bad code and inefficient reource usage is expected.
 This project is WIP and will often be updated with unfinished/broken code for the sake of saving progress.`
 
